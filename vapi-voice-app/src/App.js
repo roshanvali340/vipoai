@@ -64,7 +64,7 @@ function App() {
         </ul>
       </nav>
       <div className="main-content">
-        <h1>Voice AI for developers</h1>
+        <h1>Voice AI for the developers</h1>
         <p>
           Vapi lets developers build, test, and deploy voice agents in minutes
           rather than months.
