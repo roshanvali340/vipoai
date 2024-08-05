@@ -7,6 +7,7 @@ function App() {
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [audioChunks, setAudioChunks] = useState([]);
   const [audioUrl, setAudioUrl] = useState("");
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     if (recording) {
@@ -43,11 +44,18 @@ function App() {
     setRecording((prev) => !prev);
   };
 
+  const toggleNav = () => {
+    setNavOpen((prev) => !prev);
+  };
+
   return (
     <div className="App">
       <nav className="navbar">
         <div className="navbar-brand">VAPI</div>
-        <ul className="nav-links">
+        <div className="hamburger" onClick={toggleNav}>
+          <i className="fas fa-bars"></i>
+        </div>
+        <ul className={`nav-links ${navOpen ? "show" : ""}`}>
           <li>Docs</li>
           <li>Pricing</li>
           <li>Security</li>
